@@ -13,7 +13,9 @@ export class UserService {
     private http: HttpClient
   ) { }
 
-  test(): string {
-    return 'Success'
+  test(): Observable<User[]> {
+    // return 'Success'
+    let url = 'http://localhost:3000/api/users'
+    return this.http.get<User[]>(url);
   }
 }

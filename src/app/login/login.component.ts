@@ -12,7 +12,12 @@ export class LoginComponent implements OnInit {
   // inject service into constructor
   constructor(private userService: UserService) {
     // call service method
-    console.log(this.userService.test());
+    // console.log(this.userService.test());
+    this.userService.test().subscribe(
+      (response) => {
+        console.log(response);
+      }
+    )
   }
 
   ngOnInit(): void {
